@@ -7,4 +7,5 @@ jobs:
         run: echo Hello, world!
       - name: Check git version
         run: git --version
-      
+      - name: Check nodejs version
+        run: node --version
