@@ -2,21 +2,11 @@ on: push
 jobs:
   first-job:
     runs-on: ubuntu-latest
-    container: node:lts-alpine
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
-      # - name: Check git version
-      #   run: git --version
       - name: Check nodejs version
-        run: node --version
-  second-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Print the current time
-        run: date
-  third-job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Check ansible version
-        run: ansible --version
+        id: check
+        run: echo "node_version=$(node --version)" >> $GITHUB_ENV
+      - name: Print the node version output from previous step
+        run: echo Node.js version is ${{ env.node_version }}
