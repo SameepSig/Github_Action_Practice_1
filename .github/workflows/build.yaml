@@ -7,6 +7,8 @@ jobs:
         run: echo Hello, world!
       - name: Check nodejs version
         id: check
-        run: echo "node_version=$(node --version)" >> $GITHUB_ENV
+        # run: echo "node_version=$(node --version)" >> $GITHUB_ENV
+        run: echo "git_version=$(git --version)" >> $GITHUB_OUTPUT
       - name: Print the node version output from previous step
-        run: echo Node.js version is ${{ env.node_version }}
+        # run: echo Node.js version is ${{ env.node_version }}
+        run: echo GIT version is ${{steps.check.outputs.git_version}}
