@@ -10,3 +10,8 @@ jobs:
       #   run: git --version
       - name: Check nodejs version
         run: node --version
+  second-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the current time
+        run: date
