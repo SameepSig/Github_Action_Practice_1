@@ -15,3 +15,8 @@ jobs:
     steps:
       - name: Print the current time
         run: date
+  third-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check ansible version
+        run: ansible --version
