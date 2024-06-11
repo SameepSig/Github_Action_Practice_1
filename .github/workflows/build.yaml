@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: Check git version
-        run: git --version
+      # - name: Check git version
+      #   run: git --version
       - name: Check nodejs version
         run: node --version
