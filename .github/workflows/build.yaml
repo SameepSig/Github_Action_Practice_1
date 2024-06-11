@@ -5,10 +5,10 @@ jobs:
     steps:
       - name: Run a one-line script
         run: echo Hello, world!
-      - name: Check nodejs version
+      - name: Check GIT version
         id: check
         # run: echo "node_version=$(node --version)" >> $GITHUB_ENV
         run: echo "git_version=$(git --version)" >> $GITHUB_OUTPUT
-      - name: Print the node version output from previous step
+      - name: Print the git version output from previous step
         # run: echo Node.js version is ${{ env.node_version }}
         run: echo GIT version is ${{steps.check.outputs.git_version}}
