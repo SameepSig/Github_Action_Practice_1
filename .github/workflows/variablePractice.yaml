@@ -1,0 +1,8 @@
+on:
+  workflow_dispatch
+jobs:
+  first-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run a one-line script
+        run: echo Hello, world! The secret message is ${{vars.SECRET_MESSAGE}}
